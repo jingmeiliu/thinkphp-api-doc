@@ -15,49 +15,7 @@ class Base extends Controller
     public function _empty(){
         echo 404;
     }
-//    public function _initialize()
-//    {
-//        parent::_initialize();
-//        header("Access-Control-Allow-Origin: *");
-//        header("Access-Control-Allow-Headers: X-token,Origin, X-Requested-With, Content-Type, Accept");
-//        header('Access-Control-Allow-Methods: GET, POST, PUT');
-//        if(strtoupper($_SERVER['REQUEST_METHOD'])== 'OPTIONS'){
-//            exit;
-//        }
-//        /*管理员信息*/
-//        $this->AdminInfo = Admin::GetAdminInfo();
-//        $this->admin_ids= $this->GetAdminIds();
-//        if($this->AdminInfo && $this->AdminInfo['is_disable']==0){
-//            /*获取当前操作码*/
-//            $code=$this->getCode();
-//            /*获取不需要权限的权限码集合*/
-//            $model=new \app\admin\model\Auth();
-//            $not_check=$model->getNotCheck();
-//            if(in_array($code,$not_check)){
-//                return true;
-//            }else{
-//                /*获取当前用户的权限*/
-//                $rights=Admin::getRight($this->AdminInfo);
-//                if($rights){
-//                    $rights=explode(',',$rights);
-//                    /*判断是否有权限*/
-//                    if(in_array($code,$rights)){
-//                        return true;
-//                    }else{
-//                        echo 101;exit;//无权限
-//                    }
-//                }else{
-//                    echo 101;exit;//无当前操作权限
-//                }
-//            }
-//        }else{
-//            echo 100;exit;//登录信息有误
-//        }
-//    }
 
-    /**
-     * 获取我职位下的人（包括我）
-     * */
     /**
      * 默认接口服务
      * @desc 默认接口服务，当未指定接口服务时执行此接口服务
@@ -94,12 +52,7 @@ class Base extends Controller
         return $admin_ids;
     }
 
-    /*
-     *
-     *
-     *
-     * */
-
+   
     /**
      * 获取当前code码
      * "controller@action"
@@ -112,8 +65,5 @@ class Base extends Controller
         return $code;
     }
 
-    /**
-     *
-     * */
 
 }
